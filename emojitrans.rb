@@ -19,7 +19,10 @@ get '/emojitrans.rb' do
   end
   converted_text = Translator::translate(text)
   message = "translated emoji from #{from} || #{converted_text}"
-  twilio_send_text_to(number, message)
+  twiml = Twilio::TwiML::Response.new do |r|
+    r.Sms "Great! sent your translated emoji to #{number} || #{converted_text}"
+    twilio_send_text_to(number, message)
+  end
   twiml.text
 end
 
