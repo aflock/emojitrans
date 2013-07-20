@@ -4,13 +4,6 @@ require './send_twilio'
 require 'rubygems'
 require 'twilio-ruby'
 
-get '/hi' do
-  "HIIIIII"
-end
-
-get '/hi2' do
-  "HIIIIII"
-end
 
 get '/emojitrans.rb' do
   print params
@@ -24,13 +17,13 @@ get '/emojitrans.rb' do
   converted_text = Translator::translate(text)
   twiml = Twilio::TwiML::Response.new do |r|
     r.Sms converted_text
-    twilio_request(number, converted_text)
+    twilio_send_text_to(number, converted_text)
   end
   twiml.text
 end
 
 
-def twilio_request(to_number, body)
+def twilio_send_text_to(to_number, body)
 	Account_sid = 'AC563b25874c9acd672de0346a4158206d'
 	From_number = "+17813503815"
   begin
