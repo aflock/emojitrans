@@ -4,7 +4,7 @@ Emojitrans translates texts that include emojis and emoticons into ascii and rel
 == To Use
 
 Send a text message (to the twilio number) with emojis to your friend:
-	Whatup [some emojis] more emojis [more emojis] :: [your friend's number]
+	Whatup [some emojis] more emojis [more emojis] \:: [your friend's number]
 
 
 And it your friend will will recieve those emojis as ascii in a text from twilio number:
