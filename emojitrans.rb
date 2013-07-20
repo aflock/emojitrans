@@ -1,6 +1,5 @@
 require 'sinatra'
 require './translator'
-require './send_twilio'
 require 'rubygems'
 require 'twilio-ruby'
 
