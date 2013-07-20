@@ -8,17 +8,18 @@ require 'twilio-ruby'
 get '/emojitrans.rb' do
   print params
   initial_body = params[:Body]
+  from = params[:From]
   unless initial_body
     return "NO DATA"
   end
   text = initial_body.split("::")[0]
   number = initial_body.split("::")[1]
-  # tODO: handle no number
-  converted_text = Translator::translate(text)
-  twiml = Twilio::TwiML::Response.new do |r|
-    r.Sms converted_text
-    twilio_send_text_to(number, converted_text)
+  unless number && number.length >= 10
+    return "NO DATA"
   end
+  converted_text = Translator::translate(text)
+  message = "translated emoji from #{from} || #{converted_text}"
+  twilio_send_text_to(number, message)
   twiml.text
 end
 
