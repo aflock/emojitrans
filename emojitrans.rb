@@ -28,12 +28,12 @@ end
 
 
 def twilio_send_text_to(to_number, body)
-	Account_sid = 'AC563b25874c9acd672de0346a4158206d'
-	From_number = "+17813503815"
+	account_sid = 'AC563b25874c9acd672de0346a4158206d'
+	from_number = "+17813503815"
   begin
-    client = Twilio::REST::Client.new Account_sid, ENV['TWILIO_AUTH_TOKEN']
+    client = Twilio::REST::Client.new account_sid, ENV['TWILIO_AUTH_TOKEN']
     client.account.sms.messages.create(
-      'from' => From_number,
+      'from' => from_number,
       'to' =>   to_number,
       'body' => body
     )
