@@ -1,16 +1,18 @@
-= Emoji Text Message Tranlsation
+= Emoji Text Message Translation
 
 Emojitrans translates texts that include emojis and emoticons into ascii and relays the text.  This enables sending emojis and emoticons in texts to friends whom may not have emojis/emoticons (those Android users...).  
 == To Use
 
 Send a text message (to the twilio number) with emojis to your friend:
-	Whatup [some emojis] more emojis [more emojis] \:: [your friend's number]
 
+	Whatup [some emojis] more emojis [more emojis]::[your friend's number]
 
 And it your friend will will recieve those emojis as ascii in a text from twilio number:
+
 	translated emoji from [your number] || Whatup [some emojis as ascii] more emojis [more emojis as ascii]
 
 And you get confirmation: 
+
 	Great! send yout translated emoji to [your friends number] || Whatup [some emojis as ascii] more emojis [more emojis as ascii]
 
 = Built with
